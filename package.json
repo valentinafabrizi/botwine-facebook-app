@@ -1,0 +1,29 @@
+{
+  "name": "botwine",
+  "version": "1.0.0",
+  "description": "Bot for botwine app",
+  "main": "index.js",
+  "scripts": {
+    "test": "Errore! Nessun testo specificato"
+  },
+  "keywords": [
+    "bot",
+    "wine",
+    "virtual",
+    "agent"
+  ],
+  "author": "Valentina Fabrizi",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^3.13.1",
+    "node-rest-client": "^3.1.0",
+    "restify": "^6.3.4"
+  },
+  "engines": {
+    "node": "9.4.0"
+  },
+  "scripts": {
+     "start": "node index.js"
+  }
+
+}
