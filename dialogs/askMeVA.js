@@ -43,6 +43,9 @@ lib.dialog('VA',[
 		}
 
 		var req =  REST_CLIENT.post(url, args, function (data, response) {
+			
+			console.log("URL =================> ", url);
+			
 	    	chatMessage = data.answer;
 
 			//Recupero htmlAnswerStructure e il suo contenuto htmlObj
