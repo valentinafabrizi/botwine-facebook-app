@@ -5,6 +5,19 @@ var lib = new builder.Library('askme');
 
 const CONTROL_STRING = "-ASK-";
 
+String.prototype.replaceAll = function(searchStr, replaceStr) {
+	var str = this;
+
+    // no match exists in string?
+    if(str.indexOf(searchStr) === -1) {
+        // return string
+        return str;
+    }
+
+    // replace and remove first match, and do another recursirve search/replace
+    return (str.replace(searchStr, replaceStr)).replaceAll(searchStr, replaceStr);
+}
+
 lib.dialog('VA',[
 	//Questa è la funzione che invoca il VA
 	function (session, args) {
