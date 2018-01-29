@@ -5,7 +5,7 @@ var lib = new builder.Library('askme');
 
 const CONTROL_STRING = "-ASK-";
 
-String.prototype.replaceAll = function(searchStr, replaceStr) {
+var replaceAll = function(searchStr, replaceStr) {
 	var str = this;
 
     // no match exists in string?
