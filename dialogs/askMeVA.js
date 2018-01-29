@@ -15,7 +15,9 @@ var replaceAll = function(str, searchStr, replaceStr) {
     }
 
     // replace and remove first match, and do another recursirve search/replace
-    return (str.replace(searchStr, replaceStr)).replaceAll(searchStr, replaceStr);
+	str = str.replace(searchStr, replaceStr);
+	str = replaceAll(str, searchStr, replaceStr);
+    return str;
 }
 
 lib.dialog('VA',[
