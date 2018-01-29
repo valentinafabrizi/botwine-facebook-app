@@ -5,8 +5,8 @@ var lib = new builder.Library('askme');
 
 const CONTROL_STRING = "-ASK-";
 
-var replaceAll = function(searchStr, replaceStr) {
-	var str = this;
+var replaceAll = function(str, searchStr, replaceStr) {
+	// var str = this;
 
     // no match exists in string?
     if(str.indexOf(searchStr) === -1) {
@@ -79,7 +79,7 @@ lib.dialog('VA',[
 	
 			if(!chatMessage) chatMessage = "Non ho capito bene....";
 			chatMessage = chatMessage.replace("<div><!--block-->","").replace("<!--block--></div>","").replace("</div>","");
-			//chatMessage = chatMessage.replaceAll("<br>","\n");
+			chatMessage = chatMessage.replaceAll(chatMessage,"<br>","\n");
 
 			if(CHANNELS_ID.WEB === CURRENT_CHANNEL) chatMessage = chatMessage.replace("<br>","\n"); 
 
