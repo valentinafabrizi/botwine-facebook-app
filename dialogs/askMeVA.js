@@ -79,7 +79,7 @@ lib.dialog('VA',[
 	
 			if(!chatMessage) chatMessage = "Non ho capito bene....";
 			chatMessage = chatMessage.replace("<div><!--block-->","").replace("<!--block--></div>","").replace("</div>","");
-			chatMessage = chatMessage.replaceAll(chatMessage,"<br>","\n");
+			chatMessage = replaceAll(chatMessage,"<br>","\n");
 
 			if(CHANNELS_ID.WEB === CURRENT_CHANNEL) chatMessage = chatMessage.replace("<br>","\n"); 
 
