@@ -21,10 +21,12 @@ var replaceAll = function(str, searchStr, replaceStr) {
 }
 
 function strip_html_tags(str) {
-   str = str.replace(/&(lt|gt);/g, function (strMatch, p1){
+    str = str.replace(/&(lt|gt);/g, function (strMatch, p1){
 			return (p1 == "lt")? "<" : ">";
 		 });
-		 
+	str = str.replace(/<\/?[^>]+(>|$)/g, "");
+	alert(str);
+	console.log(str);
 	return str;
 }
 
