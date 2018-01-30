@@ -21,11 +21,11 @@ var replaceAll = function(str, searchStr, replaceStr) {
 }
 
 function strip_html_tags(str) {
-   if ((str===null) || (str===''))
-       return false;
-  else
-       str = str.toString();
-  return str.replace(/<[^>]*>/g, '');
+   str = str.replace(/&(lt|gt);/g, function (strMatch, p1){
+			return (p1 == "lt")? "<" : ">";
+		 });
+		 
+	return str;
 }
 
 lib.dialog('VA',[
@@ -90,6 +90,7 @@ lib.dialog('VA',[
 			if(!chatMessage) chatMessage = "Non ho capito bene....";
 			chatMessage = chatMessage.replace("<div><!--block-->","").replace("<!--block--></div>","").replace("</div>","");
 			chatMessage = replaceAll(chatMessage,"<br>","\n");
+			chatMessage = strip_html_tags(chatMessage);
 
 			if(CHANNELS_ID.WEB === CURRENT_CHANNEL) chatMessage = chatMessage.replace("<br>","\n"); 
 
