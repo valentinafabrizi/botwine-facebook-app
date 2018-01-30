@@ -20,6 +20,14 @@ var replaceAll = function(str, searchStr, replaceStr) {
     return str;
 }
 
+function strip_html_tags(str) {
+   if ((str===null) || (str===''))
+       return false;
+  else
+       str = str.toString();
+  return str.replace(/<[^>]*>/g, '');
+}
+
 lib.dialog('VA',[
 	//Questa è la funzione che invoca il VA
 	function (session, args) {
