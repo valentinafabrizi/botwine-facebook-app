@@ -25,7 +25,7 @@ function strip_html_tags(str) {
 			return (p1 == "lt")? "<" : ">";
 		 });
 	str = str.replace(/<\/?[^>]+(>|$)/g, "");
-	alert(str);
+	//alert(str);
 	console.log(str);
 	return str;
 }
